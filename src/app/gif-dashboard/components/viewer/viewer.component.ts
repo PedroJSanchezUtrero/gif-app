@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { GifGatewayService } from '../../services/gif-gateway.service';
 import { Gif, Datum } from '../../interfaces/gif';
 
@@ -7,7 +7,7 @@ import { Gif, Datum } from '../../interfaces/gif';
   templateUrl: './viewer.component.html',
   styleUrl: './viewer.component.scss'
 })
-export class ViewerComponent implements OnInit, AfterViewInit  {
+export class ViewerComponent implements OnInit  {
 
   @ViewChild('viewer') viewer!: ElementRef;
 
@@ -26,12 +26,6 @@ export class ViewerComponent implements OnInit, AfterViewInit  {
       this.hasReachedMaxRequests = value;
     });
   }
-
-  ngAfterViewInit(): void {
-    this.gifGatewayService.setViewerElement(this.viewer);
-    console.log('Viewer element:', this.viewer);
-  }
-
   onGifClick(gif: Datum): void {
     this.selectedGif = gif;
     document.querySelector('.viewer')?.classList.add('distorted-background');
