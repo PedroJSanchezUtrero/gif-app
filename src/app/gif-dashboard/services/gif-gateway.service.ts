@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { ElementRef, Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, Observable, of } from 'rxjs';
 import { environment } from '../../../environments/environment.development';
 import { Gif } from '../interfaces/gif';
@@ -13,9 +13,14 @@ export class GifGatewayService {
   private lastQuery: BehaviorSubject<string> = new BehaviorSubject<string>('');
   private browserInputValue: BehaviorSubject<string> = new BehaviorSubject<string>('');
   private hasReachedMaxRequests: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private viewerElement: ElementRef | null = null;
 
   constructor(private http: HttpClient) { 
     this.fetchGifs(environment.defaultSearch);
+  }
+
+  public setViewerElement(element: ElementRef): void {
+    this.viewerElement = element;
   }
 
   public fetchGifs(query: string): void {
@@ -36,6 +41,7 @@ export class GifGatewayService {
       if (data) {
         this.gifData.next(data);
         this.lastQuery.next(query);
+        this.scrollToViewer();
       }
     });
   }
@@ -62,6 +68,13 @@ export class GifGatewayService {
 
   private getLastQueryValue(): string {
     return this.lastQuery.getValue();
+  }
+
+  private scrollToViewer(): void {
+    if (this.viewerElement) {
+      this.viewerElement.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      console.log('Scrolling to viewer');
+    }
   }
 
   private getHasReachedMaxRequestsValue(): boolean {

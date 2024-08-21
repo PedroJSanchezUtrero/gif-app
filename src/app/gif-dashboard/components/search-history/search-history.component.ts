@@ -22,6 +22,7 @@ export class SearchHistoryComponent implements OnInit {
     if (search) {
       search.liked = !search.liked;
       this.saveSearchHistory();
+      this.sortSearchHistory();
     }
   }
 
