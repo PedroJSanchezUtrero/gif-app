@@ -1,0 +1,7 @@
+<mat-form-field class="browser">
+    <mat-label>Search Gifs</mat-label>
+    <input [(ngModel)]="searchQuery" type="text" matInput placeholder="Flying Tigers..." (keyup.enter)="searchGifs()">
+    <button mat-icon-button matSuffix (click)="searchGifs()">
+        <mat-icon>search</mat-icon>
+    </button>
+</mat-form-field>

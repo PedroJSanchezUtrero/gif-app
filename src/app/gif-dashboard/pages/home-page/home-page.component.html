@@ -1,0 +1,27 @@
+<mat-drawer-container class="main-container">
+  <mat-drawer mode="push" opened #drawer class="drawer">
+    <gif-dashboard-browser></gif-dashboard-browser>
+    <gif-dashboard-search-history></gif-dashboard-search-history>
+    <div class="developer-footer">
+      <a href="https://github.com/PedroJSanchezUtrero">
+        <img src="https://avatars.githubusercontent.com/u/128704262?v=4" class="dev-img" alt="PedroJSanchezUtrero"
+          title="PedroJSanchezUtrero">
+      </a>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-toolbar class="nav">
+      <button mat-icon-button class="menu-button" (click)="toggleDrawer()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Gif Application</span>
+      <span class="spacer"></span>
+        <a href="https://github.com/PedroJSanchezUtrero/gif-app">
+          <button mat-icon-button class="github-button">
+            <i class="fa-brands fa-github"></i>
+          </button>
+        </a>
+    </mat-toolbar>
+    <gif-dashboard-viewer></gif-dashboard-viewer>
+  </mat-drawer-content>
+</mat-drawer-container>

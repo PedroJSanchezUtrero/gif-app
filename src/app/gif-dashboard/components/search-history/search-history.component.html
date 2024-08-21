@@ -1,0 +1,13 @@
+<mat-list role="list" class="searchHistory">
+  <mat-list-item role="listitem" *ngFor="let search of searchHistory" class="search-item" (click)="performSearch(search.query)">
+    <div class="search-item-content">
+      <button mat-icon-button (click)="toggleLike(search.query); $event.stopPropagation()">
+        <mat-icon>{{ search.liked ? 'star' : 'star_border' }}</mat-icon>
+      </button>
+      <span class="search-query">{{ search.query | titlecase | truncate:20 }}</span>
+      <button mat-icon-button (click)="deleteSearch(search.query); $event.stopPropagation()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-list-item>
+</mat-list>

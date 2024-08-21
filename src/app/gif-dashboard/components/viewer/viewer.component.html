@@ -1,0 +1,21 @@
+
+@if( !hasReachedMaxRequests){
+    <div class="viewer">
+        <div *ngFor="let gif of gifs.data" class="gif-item" (click)="onGifClick(gif)">
+            <video [src]="gif.images.original.mp4" autoplay loop muted loading="lazy"></video>
+        </div>
+    </div>
+    
+    <div *ngIf="selectedGif" class="overlay" (click)="onClose()">
+        <section class="expanded" (click)="$event.stopPropagation()">
+            <video [src]="selectedGif.images.original.mp4" autoplay loop muted loading="lazy"></video>
+        </section>
+    </div> 
+}@else {
+    <div class="error-viewer">
+        <div class="error-message">
+            <p>Sorry, you have reached the maximum number of requests allowed by the Giphy API.</p>
+            <p>Please try again later.</p>
+        </div>
+    </div>
+}

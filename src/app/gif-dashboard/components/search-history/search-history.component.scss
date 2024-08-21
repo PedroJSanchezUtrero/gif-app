@@ -1,0 +1,36 @@
+.search-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    cursor: pointer;
+
+  }
+  
+  .search-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .search-item span {
+    flex-grow: 1;
+  }
+  
+  .search-item button {
+    margin-left: 16px;
+  }
+
+  .search-item-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .search-query {
+    flex: 1;
+    margin: 0 10px;
+  }
+
+  .searchHistory{
+    width: 100%;
+    height: 75%;
+  }
