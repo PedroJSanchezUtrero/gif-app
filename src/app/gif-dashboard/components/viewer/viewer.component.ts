@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GifGatewayService } from '../../services/gif-gateway.service';
 import { Gif, Datum } from '../../interfaces/gif';
 
@@ -8,8 +8,6 @@ import { Gif, Datum } from '../../interfaces/gif';
   styleUrl: './viewer.component.scss'
 })
 export class ViewerComponent implements OnInit  {
-
-  @ViewChild('viewer') viewer!: ElementRef;
 
   public gifs: Gif = {} as Gif;
   public selectedGif: Datum | null = null;
