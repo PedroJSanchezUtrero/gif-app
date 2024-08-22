@@ -1,27 +1,48 @@
-# GifApp
+# Project Description: GifApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
+GifApp is a web application developed with Angular, designed to search and view animated GIFs. This project was generated using Angular CLI version 18.1.4.
 
-## Development server
+## Project Structure
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The project follows a typical modular Angular structure, with components, services, and modules organized coherently. Below are some of the most important parts of the project:
 
-## Code scaffolding
+### Main Components:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **AppComponent**: The root component of the application.
+- **HomePageComponent**: The main page that contains the user interface for searching and viewing GIFs.
 
-## Build
+### Modules:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **AppModule**: The main module of the application.
+- **AppRoutingModule**: Configuration of the application's routes.
 
-## Running unit tests
+### Services:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **GifGatewayService**: Service responsible for communication with the GIFs API.
 
-## Running end-to-end tests
+### Interfaces:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Gif**: Defines the structure of the GIF data.
 
-## Further help
+## Features
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **GIF Search**: Users can search for GIFs using a search bar.
+- **GIF Viewing**: Search results are displayed in a GIF gallery.
+- **Search History**: A history of recent searches is maintained.
+- **User Interface**: Uses Angular Material for a modern and responsive interface.
+
+## Available Scripts
+
+- **Development Server**: `npm start` or `ng serve` to start the development server at `http://localhost:4200/`.
+- **Build**: `npm run build` or `ng build` to build the project.
+- **Unit Tests**: `npm test` or `ng test` to run unit tests with Karma.
+
+## Development Configuration
+
+The project includes specific configurations for the development and production environments in the `angular.json` file. Configurations for tasks and launches in Visual Studio Code are also provided in the `.vscode/tasks.json` and `.vscode/launch.json` files.
+
+## Additional Documentation
+
+For more help on using Angular CLI, you can run `ng help` or visit the [Angular CLI reference page](https://angular.io/cli).
+
+This project is maintained by PedroJSanchezUtrero.
